@@ -509,8 +509,7 @@ def ffb(ids,names,passlist):
 	loop+=1
 def gmail():
                 os.system('rm -rf .re.txt')
-                os.system('clear');print(logo)
-		linex()
+                os.system('clear');print(logo);linex()
                 print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
                 linex()
                 first = input(' Put first name: ')
