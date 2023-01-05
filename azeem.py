@@ -667,7 +667,6 @@ def gmail():
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         fo = open('.re.txt', 'r').read().splitlines()
-			linex()
 			mthd=input(' Choose: ')
 			linex()
                 with tred(max_workers=30) as yaari:
