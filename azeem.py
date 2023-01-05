@@ -540,8 +540,7 @@ def gmail():
                         fo = open('.re.txt', 'r').read().splitlines()
                 with tred(max_workers=30) as Aking:
                         total = str(len(fo))
-                        os.system('clear')
-			print(logo)
+                        os.system('clear');print(logo);linex()
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
