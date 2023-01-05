@@ -373,7 +373,7 @@ def ffb(ids,names,passlist):
 	loop+=1
 def gmail():
                 os.system('rm -rf .re.txt')
-                clear()
+                os.system('clear')
                 print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
                 linex()
                 first = input(' Put first name: ')
@@ -404,7 +404,7 @@ def gmail():
                         fo = open('.re.txt', 'r').read().splitlines()
                 with ThreadPool(max_workers=35) as yaari:
                         total = str(len(fo))
-                        clear()
+                        os.system('clear')
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
