@@ -150,21 +150,21 @@ awan =[
 'Mozilla/5.0 (Linux; Android 10; LM-X420) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.128 Mobile Safari/537.36',
 'Mozilla/5.0 (Linux; Android 10; LM-Q710(FGN)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.128 Mobile Safari/537.36',]
 logo=("""\033[1;97m
-     d8b   db  .d88b.   .d88b.  d8888b. 
-     888o  88 .8P  Y8. .8P  Y8. 88  `8D 
-     \x1b[1;91m88V8o 88 88    88 88    88 88oooY' 
-     \x1b[1;91m88 V8o88 88    88 88    88 88~~~b. 
-   \x1b[1;97m  88  V888 `8b  d8' `8b  d8' 88   8D 
-     VP   V8P  `Y88P'   `Y88P'  Y8888P'
-\33[1;37m----------------------------------------------
-→   Owner      :  MR.NOOB
-→   Facebook   :  RIAZ KHAN
-→   Github     :  RIAZ-143
-→   Tool Type  :  \x1b[1;91mFREE
-\x1b[1;97m→   Version    :  1.1
-\33[1;37m----------------------------------------------""")
+\x1b[1;92m ________   _______  _______\x1b[1;92m 
+\x1b[1;92m|       /  |   ____||   ____|\x1b[1;92m
+\x1b[1;92m`---/  /   |  |__   |  |__   \x1b[1;92m
+\x1b[1;92m   /  /    |   __|  |   __|  \x1b[1;92m
+\x1b[1;92m  /  /----.|  |____ |  |____ \x1b[1;92m
+\x1b[1;92m /________||_______||_______|\x1b[1;92m
+\x1b[1;92m----------------------------------------------\x1b[1;92m
+\x1b[1;92m→   Owner      :  MR.ZEE\x1b[1;92m
+\x1b[1;92m→   Facebook   :  Zia Jee\x1b[1;92m
+\x1b[1;92m→   Github     :  Personal Use\x1b[1;92m
+\x1b[1;92m→   Tool Type  :  \x1b[1;91mNot for sale\x1b[1;92m
+\x1b[1;97m→   Version    :  1.0.0
+\x1b[1;92m----------------------------------------------\x1b[1;92m""")
 def linex():
-	print('\33[1;37m----------------------------------------------')
+	print('\x1b[1;92m----------------------------------------------\x1b[1;92m')
 loop = 0
 oks = []
 cps = []
@@ -179,11 +179,11 @@ def menu():
 			
 			os.system('clear')
 			print(logo)
-			print('[1] File Cloning')
-			print('[2] Pak Random Cloning')
-			print('[3] Gmail Cloning')
-			print('[4] Random Choice Pass ')
-			print('[5] Contact me on Whatsapp')
+			print('\x1b[1;92m[1] File Cloning\x1b[1;92m')
+			print('\x1b[1;92m[2] Pak Random Clonin\x1b[1;92mg')
+			print('\x1b[1;92m[3] Gmail Cloning\x1b[1;92m')
+			print('\x1b[1;92m[4] Random Choice Pass \x1b[1;92m')
+			print('\x1b[1;92m[5] Contact me on Whatsapp\x1b[1;92m')
 			print('\x1b[1;91m[6] Exit main menu')
 			linex()
 			zee=input(' Choose an option: ')
