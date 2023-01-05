@@ -617,7 +617,7 @@ def gmail():
                         limit=int(input(' Put limit: '))
                 except ValueError:
                         limit = 5000
-                os.system('clear');print(logo);linex()
+                os.system('clear');print(logo)
 		print('[1] File Method\x1b[1;92m [1] \n\x1b[1;97m[2] File Method \x1b[1;92m[2]')
 		linex()
 		mthd=input(' Choose: ')
