@@ -628,11 +628,6 @@ def gmail():
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         fo = open('.re.txt', 'r').read().splitlines()
-	os.system('clear');print(logo)
-	print('[1] File Method\x1b[1;92m [1] \n\x1b[1;97m[2] File Method \x1b[1;92m[2]')
-	linex()
-	mthd=input(' Choose: ')
-	linex()
                 with tred(max_workers=30) as Aking:
                         total = str(len(fo))
 			os.system('clear');print(logo);linex()
