@@ -645,7 +645,6 @@ def gmail():
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
 				Aking.submit(m1,ids,passlist)
-                                
                 print('\033[1;37m')
                 linex()
                 print(' The process has completed')
