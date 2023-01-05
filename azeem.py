@@ -134,16 +134,7 @@ for xd in range(10000):
 	l='Mobile Safari/537.36'
 	uaku2=f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}'
 	ugen.append(uaku2)
-infos=open('device_info.txt','r').read()
-try:
-        version_,model_,brand_name_,width_,height_,build_,operator_,density_=infos.split('$')
-except:
-        version_ = str(random.randint(7,13))
-        model_ = "Infinix"
-        brand_name_ = "Infinix"
-        width_ = "720"
-        height_ = "1280"
-zee = ['Dalvik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/'+build_+') [FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.orca;FBLC/th_TH;FBBV/135374479;FBCR/'+operator_+';FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+model_+';FBSV/'+version_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density='+density_+',width='+width_+',height='+height_+'};FB_FW/1;]']
+
 sim_id = ''
 android_version = subprocess.check_output('getprop ro.build.version.release',shell=True).decode('utf-8').replace('\n','')
 model = subprocess.check_output('getprop ro.product.model',shell=True).decode('utf-8').replace('\n','')
@@ -372,7 +363,7 @@ def m1(ids,passlist):
                         fbrv = '0'
                         fban = 'FB4A'
                         fbpn = 'com.facebook.katana'
-                        ua = zee
+                        ua = 'Mozilla/5.0 (Linux; Android 10; R1PLUS_1 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/98.0.4758.101 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/320.0.0.12.108;]'
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
                         device_id = str(uuid.uuid4())
