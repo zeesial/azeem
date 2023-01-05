@@ -300,6 +300,41 @@ def menu():
 			else:
 				exit(' Option not found in menu...')
 
+def pasw(self):
+                passlist = []
+                if not os.path.exists('device_info.txt'):
+                        os.system('clear')
+                        print(logo)
+                        print(" what is your andriod version ex 8,9,10")
+                        version_=input(' type andriod version : ')
+                        print(44*'=')
+                        print(" your mobile model name ex Techno LD7 etc")
+                        model_=input(" model Name : ")
+                        print(44*"=")
+                        print(" your mobile company name ex Techno,Redmi")
+                        brand_name_=input(" device company name : ")
+                        print(44*'=')
+                        print(" your mobile width ex 720,740,730,780 etc")
+                        width_=input(" device width : ")
+                        print(44*'=')
+                        print(" your mobile height ex 1660,1780,1730 etc")
+                        height_=input(" device height : ")
+                        print(44*'=')
+                        print(" your mobile height ex R16NW,LRX22C etc")
+                        build_=input(" build : ")
+                        print(44*'=')
+                        print(" your mobile height ex Jazz,Telenor,Zong etc")
+                        operator_=input(" Operator : ")
+                        print(44*'=')
+                        print(" your mobile height ex 2.5,3.0 etc")
+                        density_=input(" density : ")
+                        info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+build_+'$'+operator_+'$'+density_)
+                os.system('clear')
+                print(logo)
+                linex()
+                input(' Successfully created Press enter to back ')
+                os.system('python azeem.py')
+
 def m1(ids,passlist):
         global loop
         global oks
