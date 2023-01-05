@@ -611,7 +611,6 @@ def gmail():
                 linex()
                 print(' Example: @gmail.com , @yahoo.com etc...')
                 linex()
-		linex()
 		print('[1] File Method\x1b[1;92m [1] \n\x1b[1;97m[2] File Method \x1b[1;92m[2]')
 		linex()
 		mthd=input(' Choose: ')
