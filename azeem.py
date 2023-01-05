@@ -670,9 +670,6 @@ def gmail():
                 with tred(max_workers=30) as yaari:
                         tl = str(len(fo))
                         os.system('clear');print(logo)
-			linex()
-			mthd=input(' [Method =1], [Method =2] Choose: ')
-			linex()
                         print(' Total account : \033[1;32m'+tl)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
