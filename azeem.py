@@ -510,6 +510,7 @@ def ffb(ids,names,passlist):
 def gmail():
                 os.system('rm -rf .re.txt')
                 os.system('clear')
+		print(logo)
                 print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
                 linex()
                 first = input(' Put first name: ')
@@ -541,6 +542,7 @@ def gmail():
                 with tred(max_workers=30) as Aking:
                         total = str(len(fo))
                         os.system('clear')
+			print(logo)
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
