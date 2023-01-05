@@ -611,10 +611,6 @@ def gmail():
                 linex()
                 print(' Example: @gmail.com , @yahoo.com etc...')
                 linex()
-		print('[1] File Method\x1b[1;92m [1] \n\x1b[1;97m[2] File Method \x1b[1;92m[2]')
-		linex()
-		mthd=input(' Choose: ')
-		linex()
                 domain = input(' domain: ')
                 linex()
                 try:
@@ -635,6 +631,10 @@ def gmail():
                 with tred(max_workers=30) as Aking:
                         total = str(len(fo))
 			os.system('clear');print(logo);linex()
+			print('[1] File Method\x1b[1;92m [1] \n\x1b[1;97m[2] File Method \x1b[1;92m[2]')
+			linex()
+			mthd=input(' Choose: ')
+			linex()
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
