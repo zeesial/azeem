@@ -134,7 +134,7 @@ for xd in range(10000):
 	l='Mobile Safari/537.36'
 	uaku2=f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}'
 	ugen.append(uaku2)
-infos = open('device_info.txt','r').read()
+infos=open('device_info.txt','r').read()
 try:
         version_,model_,brand_name_,width_,height_,build_,operator_,density_=infos.split('$')
 except:
