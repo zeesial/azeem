@@ -617,7 +617,6 @@ def gmail():
                         limit=int(input(' Put limit: '))
                 except ValueError:
                         limit = 5000
-		linex()
                 print(' Getting gmails...')
                 lists = ['3','4']
                 for xd in range(limit):
