@@ -666,16 +666,14 @@ def gmail():
                         else:
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        fo = open('.re.txt', 'r').read().splitlines()
-		os.system('clear');print(logo)
-
-			print('[1] File Method\x1b[1;92m [1] \n\x1b[1;97m[2] File Method \x1b[1;92m[2]')
-			linex()
-			mthd=input(' Choose: ')
-			linex()		
+                        fo = open('.re.txt', 'r').read().splitlines()		
                 with tred(max_workers=30) as yaari:
                         tl = str(len(fo))
                         os.system('clear');print(logo)
+			print('[1] File Method\x1b[1;92m [1] \n\x1b[1;97m[2] File Method \x1b[1;92m[2]')
+			linex()
+			mthd=input(' Choose: ')
+			linex()
                         print(' Total account : \033[1;32m'+tl)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
