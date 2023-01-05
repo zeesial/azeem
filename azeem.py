@@ -670,7 +670,8 @@ def gmail():
                 with tred(max_workers=30) as yaari:
                         tl = str(len(fo))
                         os.system('clear');print(logo)
-			print('[1] File Method\x1b[1;92m [1] \n\x1b[1;97m[2] File Method \x1b[1;92m[2]')
+			print(' Method =1 \033[1;32m')
+			print(' Method =2 \033[1;32m')
 			linex()
 			mthd=input(' Choose: ')
 			linex()
