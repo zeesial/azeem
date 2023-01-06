@@ -671,7 +671,7 @@ def gmail():
         linex()
         print(' [1] Method 1 (for new ids) \n [2] Method 2 (for old ids)\n [3] Method 3 (for old ids)')
         linex()
-        mthd = input(' Choose method: ')
+        mthd=input(' Choose method: ')
         linex()
         print(' Do you went show cp account? (y/n): ')
         linex()
