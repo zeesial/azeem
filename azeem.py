@@ -687,7 +687,7 @@ def gmail():
                 print(' Total account : \033[1;32m'+tl)
                 print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                 linex()
-                	for user in fo:
+                for user in fo:
                         ids,names = user.split('|')
                         first_name = names.rsplit(' ')[0]
                         try:
