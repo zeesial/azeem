@@ -333,7 +333,6 @@ def useragent():
                         print(" your mobile height ex 2.5,3.0 etc")
                         density_=input(" density : ")
                         info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+build_+'$'+operator_+'$'+density_)
-			infos = open('device_info.txt','r').read(version_,model_,brand_name_,width_,height_=infos.split('$'))
 			uas = 'Davik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+brand_name_+';FBSV/'+brand_name_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width='+width_+',height='+height_+'};]'
 			print(uas)
                 input(' Successfully created Copy & Press enter to back ')
