@@ -360,7 +360,7 @@ def m1(ids,passlist):
                         fbrv = '0'
                         fban = 'FB4A'
                         fbpn = 'com.facebook.katana'
-                        ua = 'Davik/2.1.0 (Linux; U; Android 10.0.0; CPH1823 Build/8CEOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/Oppo F9 Pro;FBBD/Oppo;FBDV/Oppo F9 Pro;FBSV/10.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width=1080,height=1920};]'
+                        ua = 'Davik/2.1.0 (Linux; U; Android 12.0.0; Xiaomi 10T Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/Xiaomi;FBBD/Xiaomi;FBDV/Xiaomi 10T;FBSV/12.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width=1080,height=1920};]'
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
                         device_id = str(uuid.uuid4())
