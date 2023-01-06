@@ -333,8 +333,6 @@ def useragent():
                         print(" your mobile height ex 2.5,3.0 etc")
                         density_=input(" density : ")
                         info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+build_+'$'+operator_+'$'+density_)
-			uas = 'Davik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+brand_name_+';FBSV/'+brand_name_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width='+width_+',height='+height_+'};]'
-			print(uas)
                 input(' Successfully created Copy & Press enter to back ')
                 os.system('python azeem.py')
 
@@ -362,7 +360,7 @@ def m1(ids,passlist):
                         fbrv = '0'
                         fban = 'FB4A'
                         fbpn = 'com.facebook.katana'
-                        ua = 'Dalvik/2.1.0 (Android 9; L-03K Build/PKQ1.190522.001) [FBAN/MessengerLite;FBAV/141.0.0.2.117;FBPN/com.facebook.mlite;FBLC/en_US;FBBV/293513921;FBCR/Airtel;FBMF/Facebook;Facebook/lge;FBDV/L-03K;FBSV/9;FBCA'
+                        ua = 'Davik/2.1.0 (Linux; U; Android 10.0.0; Redmi Note 9s Build/R34MIUI) [FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.katana;FBLC/th_TH;FBBV/135374479;FBCR/TELENOR;FBMF/Redmi;FBBD/Redmi;FBDV/Redmi Note 9s;FBSV/10.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.7,width=1080,height=1920};FB_FW/1;]'
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
                         device_id = str(uuid.uuid4())
@@ -453,7 +451,7 @@ def m2(ids,passlist):
                         fbrv = '0'
                         fban = 'FB4A'
                         fbpn = 'com.facebook.katana'
-                        ua = 'Davik/2.1.0 (Linux; U; Android '+android_version+'.0.1; '+model+' Build/'+build+') [FBAN/'+fban+';FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/{density=2.625,width=1080,height=1920};FBLC/'+fblc+';FBRV/'+str(random.randint(000000000,999999999))+';FBCR/'+fbcr+';FBMF/'+fbmf+';FBBD/'+fbbd+';FBPN/'+fbpn+';FBDV/'+fbdv+';FBSV/'+fbsv+';FBOP/19;FBCA/'+fbca+';]'
+                        ua = 'Dalvik/2.1.0 (Linux; U; Android 10.0.0; Infinix Build/R16NM) [FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.orca;FBLC/th_TH;FBBV/135374479;FBCR/Telenor;FBMF/Infinix;FBBD/Infinix;FBDV/Infinix;FBSV/10.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.5,width=720,height=1280};FB_FW/1;]'
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
                         device_id = str(uuid.uuid4())
