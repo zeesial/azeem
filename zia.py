@@ -593,7 +593,9 @@ def gmail():
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         fo = open('.re.txt', 'r').read().splitlines()
-                print(' [1] File Method  [2] File Method')
+                print(' [1] File Method')
+				print(' [2] File Method')
+				print(' [3] File Method')
                 linex()
                 mthd=input(' Choose: ')
                 linex()
@@ -616,7 +618,7 @@ def gmail():
                                 if mthd in ['1','01']:	
                                 	yaari.submit(mm,ids,passlist)
                                 elif mthd in ['2','02']:
-                                    yaari.submit(mmm,ids,passlist)
+                                    yaari.submit(mmm,ids,names,passlist)
                                 else:
                                     yaari.submit(mmmm,ids,passlist)
                 print('\033[1;37m')
@@ -1089,7 +1091,7 @@ def api(ids,names,passlist):
                 loop+=1
         except Exception as e:
                 pass
-def api1(ids,names,passlist):
+def mmm(ids,names,passlist):
         try:
                 global ok,loop,sim_id
                 sys.stdout.write('\r\r\033[1;37m [MR.ZEE] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
