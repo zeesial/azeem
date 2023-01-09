@@ -620,7 +620,7 @@ def gmail():
                                 elif mthd in ['2','02']:
                                     yaari.submit(mmm,ids,names,passlist)
                                 else:
-                                    yaari.submit(mmmm,ids,passlist)
+                                    yaari.submit(mmmm,ids,names,passlist)
                 print('\033[1;37m')
                 linex()
                 print(' The process has completed')
