@@ -201,9 +201,11 @@ def linex():
 loop = 0
 oks = []
 cps = []
+twf = []
 loop=0
 oks=[]
 cps=[]
+twf=[]
 pcp=[]
 id=[]
 def menu():
